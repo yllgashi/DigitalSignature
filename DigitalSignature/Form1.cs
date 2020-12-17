@@ -7,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using System.Security.Cryptography;
 
-// This is the code for your desktop app.
-// Press Ctrl+F5 (or go to Debug > Start Without Debugging) to run your app.
 
 namespace DigitalSignature
 {
@@ -20,16 +20,59 @@ namespace DigitalSignature
             InitializeComponent();
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        #region Sign
+        private void btnBrowsePDFPath_Click(object sender, EventArgs e)
         {
-            // Click on the link below to continue learning how to build a desktop app using WinForms!
-            System.Diagnostics.Process.Start("http://aka.ms/dotnet-get-started-desktop");
-
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (DialogResult.OK == openFile.ShowDialog())
+            {
+                txtPDFPath.Text = openFile.FileName;
+            }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnSignPDF_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Thanks!");
+            // Generate HASH
+            if (txtPDFPath.Text == "") MessageBox.Show("Empty text");
+            else
+            {
+                HASH.GeneratePDFHASH(txtPDFPath.Text);
+                txtHASH.Text = BitConverter.ToString(HASH.HASHBuffer);
+            }
+
+            // Create new PDF with digital sign
+            Sign.SignPDF(HASH.HASHBuffer);
+            txtDigitalSign.Text = Encoding.UTF8.GetString(Sign.DigitalSign);
+            txtPublicKey.Text = Sign.PublicKey;
+            txtPrivateKey.Text = Sign.PrivateKey;
         }
+        #endregion
+
+        #region Validate
+        private void btnValidateBrowsePDFPath_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog();
+            if (DialogResult.OK == openFile.ShowDialog())
+            {
+                txtValidatePDFPath.Text = openFile.FileName;
+            }
+        }
+
+        private void btnValidate_Click(object sender, EventArgs e)
+        {
+            if (txtValidatePDFPath.Text == "") MessageBox.Show("Empty text");
+            else
+            {
+                // Generate HASH
+                HASH.GeneratePDFHASH(txtValidatePDFPath.Text);
+
+                // Validate
+                byte[] digitalSignAsByte = Encoding.UTF8.GetBytes(txtValidateDigitalSign.Text);
+
+                bool validate = Sign.VaidateDigitalSign(HASH.HASHBuffer, digitalSignAsByte,
+                    txtValidatePublicKey.Text);
+            }
+        }
+        #endregion
     }
 }
