@@ -26,8 +26,7 @@ namespace DigitalSignature
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             this.pnlHeader = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPDFPath = new System.Windows.Forms.TextBox();
@@ -63,7 +62,7 @@ namespace DigitalSignature
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.label1.Location = new System.Drawing.Point(301, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 25);
@@ -248,7 +247,7 @@ namespace DigitalSignature
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPDFPath);
             this.Controls.Add(this.pnlHeader);
-            this.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Bahnschrift", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -256,31 +255,30 @@ namespace DigitalSignature
             this.pnlHeader.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
-        #endregion
-
-        private System.Windows.Forms.Panel pnlHeader;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtPDFPath;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBrowsePDFPath;
         private System.Windows.Forms.Button btnSignPDF;
+        private System.Windows.Forms.Button btnValidate;
+        private System.Windows.Forms.Button btnValidateBrowsePDFPath;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtDigitalSign;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnValidateBrowsePDFPath;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtValidatePDFPath;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txtValidatePublicKey;
-        private System.Windows.Forms.Button btnValidate;
-        private System.Windows.Forms.TextBox txtValidateDigitalSign;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pnlHeader;
+        private System.Windows.Forms.TextBox txtDigitalSign;
+        private System.Windows.Forms.TextBox txtPDFPath;
         private System.Windows.Forms.TextBox txtPublicKey;
+        private System.Windows.Forms.TextBox txtValidateDigitalSign;
+        private System.Windows.Forms.TextBox txtValidatePDFPath;
+        private System.Windows.Forms.TextBox txtValidatePublicKey;
+
+        #endregion
     }
 }
 

@@ -8,3 +8,16 @@ C:\Users\Ylli\Documents\myApps\github\DigitalSignature\DigitalSignature\obj\Debu
 C:\Users\Ylli\Documents\myApps\github\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.csproj.CoreCompileInputs.cache
 C:\Users\Ylli\Documents\myApps\github\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.exe
 C:\Users\Ylli\Documents\myApps\github\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.pdb
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\bin\Debug\DigitalSignature.exe.config
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\bin\Debug\DigitalSignature.exe
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\bin\Debug\DigitalSignature.pdb
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.csprojAssemblyReference.cache
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.CreateDigitalSignForm.resources
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.Form1.resources
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.Properties.Resources.resources
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.csproj.GenerateResource.cache
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.csproj.CoreCompileInputs.cache
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.exe
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.pdb
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.ValidateDigitalSignature.resources
+C:\Users\blend\RiderProjects\DigitalSignature\DigitalSignature\obj\Debug\DigitalSignature.MainForm.resources
