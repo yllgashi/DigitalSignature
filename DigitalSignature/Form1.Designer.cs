@@ -46,6 +46,8 @@ namespace DigitalSignature
             this.btnValidate = new System.Windows.Forms.Button();
             this.txtValidateDigitalSign = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtPublicKey = new System.Windows.Forms.TextBox();
             this.pnlHeader.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -206,11 +208,29 @@ namespace DigitalSignature
             this.label11.TabIndex = 22;
             this.label11.Text = "PDF Digital Sign:";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(5, 255);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(64, 16);
+            this.label3.TabIndex = 24;
+            this.label3.Text = "PublicKey";
+            // 
+            // txtPublicKey
+            // 
+            this.txtPublicKey.Location = new System.Drawing.Point(117, 252);
+            this.txtPublicKey.Name = "txtPublicKey";
+            this.txtPublicKey.Size = new System.Drawing.Size(184, 23);
+            this.txtPublicKey.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(770, 489);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtPublicKey);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtValidateDigitalSign);
             this.Controls.Add(this.btnValidate);
@@ -259,6 +279,8 @@ namespace DigitalSignature
         private System.Windows.Forms.Button btnValidate;
         private System.Windows.Forms.TextBox txtValidateDigitalSign;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtPublicKey;
     }
 }
 

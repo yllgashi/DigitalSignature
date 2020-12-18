@@ -34,13 +34,14 @@ namespace DigitalSignature
             else
             {
                 // Generate HASH
-                HASH.GeneratePDFHASH(txtPDFPath.Text);
+                byte[] hashBuffer = HASH.GeneratePDFHASH(txtPDFPath.Text);
 
                 // Sign HASH code
-                Sign.SignPDF(HASH.HASHBuffer);
+                byte[] DigitalSign = Sign.SignPDF(hashBuffer);
 
-                // Show digital signature
-                txtDigitalSign.Text = Encoding.UTF8.GetString(Sign.DigitalSign);
+                // Show digital signature and public key
+                txtDigitalSign.Text = Convert.ToBase64String(DigitalSign);
+                txtPublicKey.Text = Sign.PublicKey;
             }
         }
         #endregion
@@ -62,7 +63,10 @@ namespace DigitalSignature
                 HASH.GeneratePDFHASH(txtValidatePDFPath.Text);
 
                 // Validate
-                bool validate = Sign.VaidateDigitalSign(HASH.HASHBuffer);
+                byte[] hashBuffer = HASH.GeneratePDFHASH(txtValidatePDFPath.Text);
+
+                bool validate = Sign.VaidateDigitalSign(hashBuffer,
+                    Convert.FromBase64String(txtValidateDigitalSign.Text), txtValidatePublicKey.Text);
 
 
                 if (validate) MessageBox.Show("Success", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
