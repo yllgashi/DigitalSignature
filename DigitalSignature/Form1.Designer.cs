@@ -34,14 +34,8 @@ namespace DigitalSignature
             this.label2 = new System.Windows.Forms.Label();
             this.btnBrowsePDFPath = new System.Windows.Forms.Button();
             this.btnSignPDF = new System.Windows.Forms.Button();
-            this.txtPublicKey = new System.Windows.Forms.TextBox();
-            this.txtPrivateKey = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtDigitalSign = new System.Windows.Forms.TextBox();
-            this.txtHASH = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnValidateBrowsePDFPath = new System.Windows.Forms.Button();
@@ -68,7 +62,7 @@ namespace DigitalSignature
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Bahnschrift", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(178, 34);
+            this.label1.Location = new System.Drawing.Point(301, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(191, 25);
             this.label1.TabIndex = 0;
@@ -78,7 +72,7 @@ namespace DigitalSignature
             // 
             this.txtPDFPath.Location = new System.Drawing.Point(117, 149);
             this.txtPDFPath.Name = "txtPDFPath";
-            this.txtPDFPath.Size = new System.Drawing.Size(332, 23);
+            this.txtPDFPath.Size = new System.Drawing.Size(184, 23);
             this.txtPDFPath.TabIndex = 1;
             // 
             // label2
@@ -92,7 +86,7 @@ namespace DigitalSignature
             // 
             // btnBrowsePDFPath
             // 
-            this.btnBrowsePDFPath.Location = new System.Drawing.Point(455, 149);
+            this.btnBrowsePDFPath.Location = new System.Drawing.Point(307, 149);
             this.btnBrowsePDFPath.Name = "btnBrowsePDFPath";
             this.btnBrowsePDFPath.Size = new System.Drawing.Size(31, 23);
             this.btnBrowsePDFPath.TabIndex = 3;
@@ -102,7 +96,7 @@ namespace DigitalSignature
             // 
             // btnSignPDF
             // 
-            this.btnSignPDF.Location = new System.Drawing.Point(206, 417);
+            this.btnSignPDF.Location = new System.Drawing.Point(149, 296);
             this.btnSignPDF.Name = "btnSignPDF";
             this.btnSignPDF.Size = new System.Drawing.Size(75, 23);
             this.btnSignPDF.TabIndex = 4;
@@ -110,78 +104,26 @@ namespace DigitalSignature
             this.btnSignPDF.UseVisualStyleBackColor = true;
             this.btnSignPDF.Click += new System.EventHandler(this.btnSignPDF_Click);
             // 
-            // txtPublicKey
-            // 
-            this.txtPublicKey.Location = new System.Drawing.Point(117, 207);
-            this.txtPublicKey.Name = "txtPublicKey";
-            this.txtPublicKey.ReadOnly = true;
-            this.txtPublicKey.Size = new System.Drawing.Size(332, 23);
-            this.txtPublicKey.TabIndex = 5;
-            // 
-            // txtPrivateKey
-            // 
-            this.txtPrivateKey.Location = new System.Drawing.Point(117, 260);
-            this.txtPrivateKey.Name = "txtPrivateKey";
-            this.txtPrivateKey.ReadOnly = true;
-            this.txtPrivateKey.Size = new System.Drawing.Size(332, 23);
-            this.txtPrivateKey.TabIndex = 6;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 207);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Public key:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 260);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 16);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Private key:";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 366);
+            this.label5.Location = new System.Drawing.Point(5, 206);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 16);
             this.label5.TabIndex = 12;
             this.label5.Text = "PDF Digital Sign:";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, 310);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 16);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "PDF HASH:";
-            // 
             // txtDigitalSign
             // 
-            this.txtDigitalSign.Location = new System.Drawing.Point(117, 363);
+            this.txtDigitalSign.Location = new System.Drawing.Point(117, 203);
             this.txtDigitalSign.Name = "txtDigitalSign";
-            this.txtDigitalSign.ReadOnly = true;
-            this.txtDigitalSign.Size = new System.Drawing.Size(332, 23);
+            this.txtDigitalSign.Size = new System.Drawing.Size(184, 23);
             this.txtDigitalSign.TabIndex = 10;
-            // 
-            // txtHASH
-            // 
-            this.txtHASH.Location = new System.Drawing.Point(117, 310);
-            this.txtHASH.Name = "txtHASH";
-            this.txtHASH.ReadOnly = true;
-            this.txtHASH.Size = new System.Drawing.Size(332, 23);
-            this.txtHASH.TabIndex = 9;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(152, 108);
+            this.label7.Location = new System.Drawing.Point(191, 108);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 16);
             this.label7.TabIndex = 13;
@@ -190,7 +132,7 @@ namespace DigitalSignature
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(629, 108);
+            this.label8.Location = new System.Drawing.Point(584, 108);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(41, 16);
             this.label8.TabIndex = 14;
@@ -198,7 +140,7 @@ namespace DigitalSignature
             // 
             // btnValidateBrowsePDFPath
             // 
-            this.btnValidateBrowsePDFPath.Location = new System.Drawing.Point(837, 149);
+            this.btnValidateBrowsePDFPath.Location = new System.Drawing.Point(718, 149);
             this.btnValidateBrowsePDFPath.Name = "btnValidateBrowsePDFPath";
             this.btnValidateBrowsePDFPath.Size = new System.Drawing.Size(31, 23);
             this.btnValidateBrowsePDFPath.TabIndex = 17;
@@ -209,7 +151,7 @@ namespace DigitalSignature
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(514, 152);
+            this.label9.Location = new System.Drawing.Point(393, 152);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(86, 16);
             this.label9.TabIndex = 16;
@@ -217,15 +159,15 @@ namespace DigitalSignature
             // 
             // txtValidatePDFPath
             // 
-            this.txtValidatePDFPath.Location = new System.Drawing.Point(606, 149);
+            this.txtValidatePDFPath.Location = new System.Drawing.Point(528, 149);
             this.txtValidatePDFPath.Name = "txtValidatePDFPath";
-            this.txtValidatePDFPath.Size = new System.Drawing.Size(225, 23);
+            this.txtValidatePDFPath.Size = new System.Drawing.Size(184, 23);
             this.txtValidatePDFPath.TabIndex = 15;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(514, 210);
+            this.label10.Location = new System.Drawing.Point(393, 206);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(68, 16);
             this.label10.TabIndex = 19;
@@ -233,14 +175,14 @@ namespace DigitalSignature
             // 
             // txtValidatePublicKey
             // 
-            this.txtValidatePublicKey.Location = new System.Drawing.Point(606, 207);
+            this.txtValidatePublicKey.Location = new System.Drawing.Point(528, 206);
             this.txtValidatePublicKey.Name = "txtValidatePublicKey";
-            this.txtValidatePublicKey.Size = new System.Drawing.Size(225, 23);
+            this.txtValidatePublicKey.Size = new System.Drawing.Size(184, 23);
             this.txtValidatePublicKey.TabIndex = 18;
             // 
             // btnValidate
             // 
-            this.btnValidate.Location = new System.Drawing.Point(665, 417);
+            this.btnValidate.Location = new System.Drawing.Point(574, 296);
             this.btnValidate.Name = "btnValidate";
             this.btnValidate.Size = new System.Drawing.Size(75, 23);
             this.btnValidate.TabIndex = 20;
@@ -250,15 +192,15 @@ namespace DigitalSignature
             // 
             // txtValidateDigitalSign
             // 
-            this.txtValidateDigitalSign.Location = new System.Drawing.Point(606, 260);
+            this.txtValidateDigitalSign.Location = new System.Drawing.Point(528, 252);
             this.txtValidateDigitalSign.Name = "txtValidateDigitalSign";
-            this.txtValidateDigitalSign.Size = new System.Drawing.Size(225, 23);
+            this.txtValidateDigitalSign.Size = new System.Drawing.Size(184, 23);
             this.txtValidateDigitalSign.TabIndex = 21;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(497, 263);
+            this.label11.Location = new System.Drawing.Point(393, 259);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 16);
             this.label11.TabIndex = 22;
@@ -268,7 +210,7 @@ namespace DigitalSignature
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 489);
+            this.ClientSize = new System.Drawing.Size(770, 489);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtValidateDigitalSign);
             this.Controls.Add(this.btnValidate);
@@ -280,13 +222,7 @@ namespace DigitalSignature
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.txtDigitalSign);
-            this.Controls.Add(this.txtHASH);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtPrivateKey);
-            this.Controls.Add(this.txtPublicKey);
             this.Controls.Add(this.btnSignPDF);
             this.Controls.Add(this.btnBrowsePDFPath);
             this.Controls.Add(this.label2);
@@ -311,14 +247,8 @@ namespace DigitalSignature
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnBrowsePDFPath;
         private System.Windows.Forms.Button btnSignPDF;
-        private System.Windows.Forms.TextBox txtPublicKey;
-        private System.Windows.Forms.TextBox txtPrivateKey;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDigitalSign;
-        private System.Windows.Forms.TextBox txtHASH;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnValidateBrowsePDFPath;

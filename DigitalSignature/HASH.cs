@@ -11,7 +11,7 @@ namespace DigitalSignature
     class HASH
     {
         public static byte[] HASHBuffer { get; set; }
-        private static SHA256 Sha256 = SHA256.Create(); // Per te marr HASH-in e PDF-it
+        private static SHA256 Sha256 = SHA256.Create(); // HASH with SHA256 alg
 
 
         public static void GeneratePDFHASH(string path)

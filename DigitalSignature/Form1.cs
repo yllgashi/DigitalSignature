@@ -25,26 +25,23 @@ namespace DigitalSignature
         {
             OpenFileDialog openFile = new OpenFileDialog();
             if (DialogResult.OK == openFile.ShowDialog())
-            {
                 txtPDFPath.Text = openFile.FileName;
-            }
         }
 
         private void btnSignPDF_Click(object sender, EventArgs e)
         {
-            // Generate HASH
             if (txtPDFPath.Text == "") MessageBox.Show("Empty text");
             else
             {
+                // Generate HASH
                 HASH.GeneratePDFHASH(txtPDFPath.Text);
-                txtHASH.Text = BitConverter.ToString(HASH.HASHBuffer);
-            }
 
-            // Create new PDF with digital sign
-            Sign.SignPDF(HASH.HASHBuffer);
-            txtDigitalSign.Text = Encoding.UTF8.GetString(Sign.DigitalSign);
-            txtPublicKey.Text = Sign.PublicKey;
-            txtPrivateKey.Text = Sign.PrivateKey;
+                // Sign HASH code
+                Sign.SignPDF(HASH.HASHBuffer);
+
+                // Show digital signature
+                txtDigitalSign.Text = Encoding.UTF8.GetString(Sign.DigitalSign);
+            }
         }
         #endregion
 
@@ -53,9 +50,7 @@ namespace DigitalSignature
         {
             OpenFileDialog openFile = new OpenFileDialog();
             if (DialogResult.OK == openFile.ShowDialog())
-            {
                 txtValidatePDFPath.Text = openFile.FileName;
-            }
         }
 
         private void btnValidate_Click(object sender, EventArgs e)
@@ -67,10 +62,11 @@ namespace DigitalSignature
                 HASH.GeneratePDFHASH(txtValidatePDFPath.Text);
 
                 // Validate
-                byte[] digitalSignAsByte = Encoding.UTF8.GetBytes(txtValidateDigitalSign.Text);
+                bool validate = Sign.VaidateDigitalSign(HASH.HASHBuffer);
 
-                bool validate = Sign.VaidateDigitalSign(HASH.HASHBuffer, digitalSignAsByte,
-                    txtValidatePublicKey.Text);
+
+                if (validate) MessageBox.Show("Success", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else MessageBox.Show("Invalid", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
         #endregion
