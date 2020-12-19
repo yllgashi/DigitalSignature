@@ -2,6 +2,7 @@
 using System.IO;
 using System.Security.Policy;
 using System.Windows.Forms;
+using DigitalSignature.Utils;
 
 namespace DigitalSignature {
     public partial class CreateDigitalSignForm : Form {
@@ -10,13 +11,10 @@ namespace DigitalSignature {
         }
 
 
-        private void buttonSelectFile_Click(object sender, EventArgs e) {
-            var fileDialog = openFileDialog1.ShowDialog();
-            if(fileDialog == DialogResult.OK && openFileDialog1.FileName.EndsWith(".pdf"))    
-                textBoxSelectFile.Text = openFileDialog1.FileName;
-            else {
-                MessageBox.Show("Please select a pdf file");
-            }
+        private void buttonSelectFile_Click(object sender, EventArgs e) { 
+            string file = FileService.OpenFile(openFileDialog1, "pdf");
+            if (file != null && file.EndsWith("pdf"))
+                textBoxSelectFile.Text = file;
         }
 
         private void buttonGenerateDigitalSignature_Click(object sender, EventArgs e) {
@@ -25,9 +23,13 @@ namespace DigitalSignature {
                 byte[] digitalSignature;
                 hashBuffer = HASH.GeneratePDFHASH(textBoxSelectFile.Text);
                 digitalSignature = Sign.SignPDF(hashBuffer);
-
-                textBoxDigitalSignature.Text = Convert.ToBase64String(digitalSignature);
-                textBoxPublicKey.Text = Sign.PublicKey;
+                try {
+                    textBoxDigitalSignature.Text = Convert.ToBase64String(digitalSignature);
+                    textBoxPublicKey.Text = Sign.PublicKey;
+                }
+                catch (Exception) {
+                    MessageBox.Show("Digital Signature is not in the right format");
+                }
             }
             else {
                 MessageBox.Show("Please select a file first");
@@ -35,14 +37,17 @@ namespace DigitalSignature {
         }
 
         private void buttonSaveToFile_Click(object sender, EventArgs e) {
+            
             if (!String.IsNullOrEmpty(textBoxDigitalSignature.Text)) {
-                StreamWriter streamWriter = new StreamWriter("C:\\Users\\blend\\Desktop\\file.txt", true);
-                streamWriter.Write("Digital Signature : " + textBoxDigitalSignature.Text + "\n");
-                streamWriter.Write("Public Key        : " + textBoxPublicKey.Text);
+                if (FileService.SavePKeyAndSignatureInFile(openFileDialog1.FileName, "txt",textBoxPublicKey.Text,
+                    textBoxDigitalSignature.Text)) {
+                    
+                    MessageBox.Show("File saved succesfully");
+                }
+                else {
+                    //MessageBox.Show("File dose")
+                }
                 
-                streamWriter.Close();
-
-                MessageBox.Show("File saved succesfully");
                 
             }
             else {

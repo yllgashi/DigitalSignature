@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Windows.Forms;
+using DigitalSignature.Utils;
 
 namespace DigitalSignature {
     public partial class ValidateDigitalSignature : Form {
@@ -10,37 +11,50 @@ namespace DigitalSignature {
 
 
         private void buttonOpenFile_Click(object sender, EventArgs e) {
-            var dialog =  openFileDialog1.ShowDialog();
-
-            if (dialog == DialogResult.OK)
-                textBoxFile.Text = openFileDialog1.FileName;
+            string file = FileService.OpenFile(openFileDialog1, "pdf");
+            if (file != null && file.EndsWith("pdf"))
+                textBoxFile.Text = file;
         }
 
         private void buttonGetKeysFromFile_Click(object sender, EventArgs e) {
-           var dialog =  openFileDialog1.ShowDialog();
-           if (dialog == DialogResult.OK) {
-               StreamReader streamReader = new StreamReader(openFileDialog1.FileName);
-                    
-               textBoxDigitalSignature.Text = streamReader.ReadLine().Remove(0, 20);
-               MessageBox.Show(streamReader.Peek() + "");
-               textBoxPublicKey.Text = streamReader.ReadLine().Remove(0, 20);
-               
-           }
+            string file = FileService.OpenFile(openFileDialog1, "txt");
+
+            if (!String.IsNullOrEmpty(file)) {
+                string[] data = FileService.GetPKeyAndSignatureFromFile(file, 20);
+                if (data != null) {
+                    textBoxDigitalSignature.Text = data[0];
+                    textBoxPublicKey.Text = data[1];
+                }
+                else {
+                    MessageBox.Show("File is not in the right format");
+                }
+            }
+
         }
 
         private void buttonValidate_Click(object sender, EventArgs e) {
-            var hashBuff = HASH.GeneratePDFHASH(textBoxFile.Text);
-            if (!String.IsNullOrEmpty(textBoxDigitalSignature.Text)) {
-                if (Sign.VaidateDigitalSign(hashBuff,
-                    Convert.FromBase64String(textBoxDigitalSignature.Text), textBoxPublicKey.Text))
-                    MessageBox.Show("Success");
+            if (!String.IsNullOrEmpty(textBoxFile.Text)) {
+                if (!String.IsNullOrEmpty(textBoxDigitalSignature.Text) &&
+                    !String.IsNullOrEmpty(textBoxPublicKey.Text)) {
+                    var hashBuff = HASH.GeneratePDFHASH(textBoxFile.Text);
+                    try {
+                        if (Sign.VaidateDigitalSign(hashBuff,
+                            Convert.FromBase64String(textBoxDigitalSignature.Text), textBoxPublicKey.Text))
+                            MessageBox.Show("Success");
+                        else {
+                            MessageBox.Show("Digital signs dont match");
+                        }
+                    }
+                    catch (Exception) {
+                        MessageBox.Show("Digital Key is not in the right format");
+                    }
+                }
                 else {
-                    MessageBox.Show("Digital signs dont match");
+                    MessageBox.Show("Please fill the digital signature and the public key first");
                 }
             }
-            else {
-                MessageBox.Show("Please fill the digital signature and the public key first");
-            }
+            else
+                MessageBox.Show("Please select a file first");
 
         }
 
