@@ -8,15 +8,20 @@ namespace DigitalSignature {
         }
 
         private void buttonSign_Click(object sender, EventArgs e) {
-            this.Visible = false;
+            this.Hide();
             CreateDigitalSignForm digitalSignForm = new CreateDigitalSignForm();
-            digitalSignForm.Visible = true;
+            digitalSignForm.ShowDialog();
+            this.Close();
         }
 
         private void buttonValidate_Click(object sender, EventArgs e) {
-            this.Visible = false;
+            this.Hide();
             ValidateDigitalSignature validateDigitalSignature = new ValidateDigitalSignature();
-            validateDigitalSignature.Visible = true;
+            validateDigitalSignature.ShowDialog();
+            this.Close();
+
+            //Application.Exit();
+            //Application.Run(new ValidateDigitalSignature());
         }
     }
 }

@@ -56,9 +56,10 @@ namespace DigitalSignature {
         }
 
         private void buttonGoBack_Click(object sender, EventArgs e) {
-            this.Visible = false;
+            this.Hide();
             MainForm form1 = new MainForm();
-            form1.Visible = true;
+            form1.ShowDialog();
+            this.Close();
         }
     }
 }
