@@ -12,7 +12,7 @@ namespace DigitalSignature {
 
 
         private void buttonSelectFile_Click(object sender, EventArgs e) { 
-            string file = FileService.OpenFile(openFileDialog1, "pdf");
+            string file = FileService.OpenFile(openFileDialog1, "*");
             if (file != null && file.EndsWith("pdf"))
                 textBoxSelectFile.Text = file;
         }

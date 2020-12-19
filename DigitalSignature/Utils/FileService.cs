@@ -7,7 +7,10 @@ namespace DigitalSignature.Utils {
 
         public static string OpenFile(OpenFileDialog openFileDialog, string fileType) {
             openFileDialog.FileName = "";
-            openFileDialog.Filter = $"{fileType} files (*.{fileType})|*.{fileType}";
+            if (fileType.Equals("*"))
+                openFileDialog.Filter = $"All files (*.*)|*.*";
+            else
+                openFileDialog.Filter = $"{fileType} files (*.{fileType})|*.{fileType}";
             openFileDialog.FilterIndex = 1;
 
             if (openFileDialog.ShowDialog() == DialogResult.OK) {
@@ -43,7 +46,6 @@ namespace DigitalSignature.Utils {
         }
 
         public static bool SavePKeyAndSignatureInFile(string path, string fileType,string publicKey, string digitalSignature) {
-            MessageBox.Show(Path.GetDirectoryName(path) + "sig" + fileType);
             try {
                 StreamWriter streamWriter = new StreamWriter($"{Path.GetDirectoryName(path)}\\SignatureAndPublicKey.{fileType}");
                     

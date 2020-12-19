@@ -11,8 +11,8 @@ namespace DigitalSignature {
 
 
         private void buttonOpenFile_Click(object sender, EventArgs e) {
-            string file = FileService.OpenFile(openFileDialog1, "pdf");
-            if (file != null && file.EndsWith("pdf"))
+            string file = FileService.OpenFile(openFileDialog1, "*");
+            if (file != null)
                 textBoxFile.Text = file;
         }
 
