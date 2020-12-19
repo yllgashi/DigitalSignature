@@ -42,13 +42,13 @@ namespace DigitalSignature {
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.DarkTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -10);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(832, 127);
+            this.panel1.Size = new System.Drawing.Size(388, 127);
             this.panel1.TabIndex = 2;
             // 
             // pictureBox2

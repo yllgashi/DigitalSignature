@@ -26,7 +26,7 @@ namespace DigitalSignature {
                     textBoxPublicKey.Text = data[1];
                 }
                 else {
-                    MessageBox.Show("File is not in the right format");
+                    MessageBox.Show("File is not in the right format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -42,19 +42,19 @@ namespace DigitalSignature {
                             Convert.FromBase64String(textBoxDigitalSignature.Text), textBoxPublicKey.Text))
                             MessageBox.Show("Success");
                         else {
-                            MessageBox.Show("Digital signs dont match");
+                            MessageBox.Show("Digital signs dont match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     catch (Exception) {
-                        MessageBox.Show("Digital Key is not in the right format");
+                        MessageBox.Show("Digital Key is not in the right format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else {
-                    MessageBox.Show("Please fill the digital signature and the public key first");
+                    MessageBox.Show("Please fill the digital signature and the public key first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
-                MessageBox.Show("Please select a file first");
+                MessageBox.Show("Please select a file first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 

@@ -13,7 +13,7 @@ namespace DigitalSignature {
 
         private void buttonSelectFile_Click(object sender, EventArgs e) { 
             string file = FileService.OpenFile(openFileDialog1, "*");
-            if (file != null && file.EndsWith("pdf"))
+            if (file != null)
                 textBoxSelectFile.Text = file;
         }
 
@@ -28,11 +28,11 @@ namespace DigitalSignature {
                     textBoxPublicKey.Text = Sign.PublicKey;
                 }
                 catch (Exception) {
-                    MessageBox.Show("Digital Signature is not in the right format");
+                    MessageBox.Show("Digital Signature is not in the right format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else {
-                MessageBox.Show("Please select a file first");
+                MessageBox.Show("Please select a file first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -42,7 +42,7 @@ namespace DigitalSignature {
                 if (FileService.SavePKeyAndSignatureInFile(openFileDialog1.FileName, "txt",textBoxPublicKey.Text,
                     textBoxDigitalSignature.Text)) {
                     
-                    MessageBox.Show("File saved succesfully");
+                    MessageBox.Show("File saved succesfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else {
                     //MessageBox.Show("File dose")
@@ -51,7 +51,7 @@ namespace DigitalSignature {
                 
             }
             else {
-                MessageBox.Show("Please generate Digital Signature first");
+                MessageBox.Show("Please generate Digital Signature first", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
