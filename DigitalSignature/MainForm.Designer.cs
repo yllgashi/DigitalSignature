@@ -34,10 +34,10 @@ namespace DigitalSignature {
             this.buttonValidate = new System.Windows.Forms.PictureBox();
             this.buttonSign = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonValidate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonSign)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonValidate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonSign)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,7 +53,7 @@ namespace DigitalSignature {
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(12, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(269, 87);
@@ -63,7 +63,7 @@ namespace DigitalSignature {
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(256, 23);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
@@ -74,7 +74,7 @@ namespace DigitalSignature {
             // 
             // buttonValidate
             // 
-            this.buttonValidate.Image = ((System.Drawing.Image)(resources.GetObject("buttonValidate.Image")));
+            this.buttonValidate.Image = ((System.Drawing.Image) (resources.GetObject("buttonValidate.Image")));
             this.buttonValidate.Location = new System.Drawing.Point(136, 319);
             this.buttonValidate.Name = "buttonValidate";
             this.buttonValidate.Size = new System.Drawing.Size(117, 82);
@@ -82,10 +82,11 @@ namespace DigitalSignature {
             this.buttonValidate.TabIndex = 3;
             this.buttonValidate.TabStop = false;
             this.buttonValidate.Click += new System.EventHandler(this.buttonValidate_Click);
+            this.buttonValidate.MouseHover += new System.EventHandler(this.buttonValidate_MouseHover);
             // 
             // buttonSign
             // 
-            this.buttonSign.Image = ((System.Drawing.Image)(resources.GetObject("buttonSign.Image")));
+            this.buttonSign.Image = ((System.Drawing.Image) (resources.GetObject("buttonSign.Image")));
             this.buttonSign.Location = new System.Drawing.Point(136, 168);
             this.buttonSign.Name = "buttonSign";
             this.buttonSign.Size = new System.Drawing.Size(124, 81);
@@ -93,6 +94,7 @@ namespace DigitalSignature {
             this.buttonSign.TabIndex = 4;
             this.buttonSign.TabStop = false;
             this.buttonSign.Click += new System.EventHandler(this.buttonSign_Click);
+            this.buttonSign.MouseHover += new System.EventHandler(this.buttonSign_MouseHover);
             // 
             // MainForm
             // 
@@ -104,27 +106,26 @@ namespace DigitalSignature {
             this.Controls.Add(this.buttonSign);
             this.Controls.Add(this.buttonValidate);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digital Signature";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonValidate)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonSign)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonValidate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonSign)).EndInit();
             this.ResumeLayout(false);
-
         }
+
+        private System.Windows.Forms.PictureBox buttonSign;
+        private System.Windows.Forms.PictureBox buttonValidate;
         private System.Windows.Forms.Panel panel1;
-
-        #endregion
-
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox buttonValidate;
-        private System.Windows.Forms.PictureBox buttonSign;
+
+        #endregion
     }
 }

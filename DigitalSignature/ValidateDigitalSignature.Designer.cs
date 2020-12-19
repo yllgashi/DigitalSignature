@@ -115,6 +115,7 @@ namespace DigitalSignature {
             this.buttonGetKeysFromFile.TabIndex = 6;
             this.buttonGetKeysFromFile.TabStop = false;
             this.buttonGetKeysFromFile.Click += new System.EventHandler(this.buttonGetKeysFromFile_Click);
+            this.buttonGetKeysFromFile.MouseHover += new System.EventHandler(this.buttonGetKeysFromFile_MouseHover);
             // 
             // buttonValidate
             // 
@@ -126,6 +127,7 @@ namespace DigitalSignature {
             this.buttonValidate.TabIndex = 7;
             this.buttonValidate.TabStop = false;
             this.buttonValidate.Click += new System.EventHandler(this.buttonValidate_Click);
+            this.buttonValidate.MouseHover += new System.EventHandler(this.buttonValidate_MouseHover);
             // 
             // panel1
             // 
@@ -169,6 +171,7 @@ namespace DigitalSignature {
             this.buttonGoBack.TabIndex = 9;
             this.buttonGoBack.TabStop = false;
             this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
+            this.buttonGoBack.MouseHover += new System.EventHandler(this.buttonGoBack_MouseHover);
             // 
             // buttonOpenFile
             // 
@@ -180,6 +183,7 @@ namespace DigitalSignature {
             this.buttonOpenFile.TabIndex = 10;
             this.buttonOpenFile.TabStop = false;
             this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
+            this.buttonOpenFile.MouseHover += new System.EventHandler(this.buttonOpenFile_MouseHover);
             // 
             // ValidateDigitalSignature
             // 

@@ -6,8 +6,10 @@ using DigitalSignature.Utils;
 
 namespace DigitalSignature {
     public partial class CreateDigitalSignForm : Form {
+        ToolTip toolTip;
         public CreateDigitalSignForm() {
             InitializeComponent();
+            toolTip = new ToolTip();
         }
 
 
@@ -51,7 +53,7 @@ namespace DigitalSignature {
                 
             }
             else {
-                MessageBox.Show("Please generate Digital Signature first", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please generate Digital Signature and Public Key first", "Information", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -60,6 +62,22 @@ namespace DigitalSignature {
             MainForm form1 = new MainForm();
             form1.ShowDialog();
             this.Close();
+        }
+
+        private void buttonSelectFile_MouseHover(object sender, EventArgs e) {
+            toolTip.SetToolTip(buttonSelectFile, "Open File");
+        }
+
+        private void buttonGoBack_MouseHover(object sender, EventArgs e) {
+            toolTip.SetToolTip(buttonGoBack, "Go Back");
+        }
+
+        private void buttonSaveToFile_MouseHover(object sender, EventArgs e) {
+            toolTip.SetToolTip(buttonSaveToFile, "Save to File");
+        }
+
+        private void buttonGenerateDigitalSignature_MouseHover(object sender, EventArgs e) {
+            toolTip.SetToolTip(buttonGenerateDigitalSignature, "Generate Digital Signature");
         }
     }
 }

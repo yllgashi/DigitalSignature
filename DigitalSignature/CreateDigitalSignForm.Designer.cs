@@ -44,12 +44,12 @@ namespace DigitalSignature {
             this.buttonGenerateDigitalSignature = new System.Windows.Forms.PictureBox();
             this.buttonGoBack = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonSelectFile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonSaveToFile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGenerateDigitalSignature)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGoBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonSelectFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonSaveToFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGenerateDigitalSignature)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGoBack)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxSelectFile
@@ -111,7 +111,7 @@ namespace DigitalSignature {
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(129)))), ((int)(((byte)(110)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (253)))), ((int) (((byte) (129)))), ((int) (((byte) (110)))));
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(0, -10);
@@ -122,7 +122,7 @@ namespace DigitalSignature {
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(12, 22);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(269, 87);
@@ -132,7 +132,7 @@ namespace DigitalSignature {
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(256, 23);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
@@ -143,7 +143,7 @@ namespace DigitalSignature {
             // 
             // buttonSelectFile
             // 
-            this.buttonSelectFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSelectFile.Image")));
+            this.buttonSelectFile.Image = ((System.Drawing.Image) (resources.GetObject("buttonSelectFile.Image")));
             this.buttonSelectFile.Location = new System.Drawing.Point(327, 175);
             this.buttonSelectFile.Name = "buttonSelectFile";
             this.buttonSelectFile.Size = new System.Drawing.Size(33, 26);
@@ -151,10 +151,11 @@ namespace DigitalSignature {
             this.buttonSelectFile.TabIndex = 7;
             this.buttonSelectFile.TabStop = false;
             this.buttonSelectFile.Click += new System.EventHandler(this.buttonSelectFile_Click);
+            this.buttonSelectFile.MouseHover += new System.EventHandler(this.buttonSelectFile_MouseHover);
             // 
             // buttonSaveToFile
             // 
-            this.buttonSaveToFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonSaveToFile.Image")));
+            this.buttonSaveToFile.Image = ((System.Drawing.Image) (resources.GetObject("buttonSaveToFile.Image")));
             this.buttonSaveToFile.Location = new System.Drawing.Point(144, 367);
             this.buttonSaveToFile.Name = "buttonSaveToFile";
             this.buttonSaveToFile.Size = new System.Drawing.Size(49, 50);
@@ -162,10 +163,11 @@ namespace DigitalSignature {
             this.buttonSaveToFile.TabIndex = 8;
             this.buttonSaveToFile.TabStop = false;
             this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
+            this.buttonSaveToFile.MouseHover += new System.EventHandler(this.buttonSaveToFile_MouseHover);
             // 
             // buttonGenerateDigitalSignature
             // 
-            this.buttonGenerateDigitalSignature.Image = ((System.Drawing.Image)(resources.GetObject("buttonGenerateDigitalSignature.Image")));
+            this.buttonGenerateDigitalSignature.Image = ((System.Drawing.Image) (resources.GetObject("buttonGenerateDigitalSignature.Image")));
             this.buttonGenerateDigitalSignature.Location = new System.Drawing.Point(270, 367);
             this.buttonGenerateDigitalSignature.Name = "buttonGenerateDigitalSignature";
             this.buttonGenerateDigitalSignature.Size = new System.Drawing.Size(50, 50);
@@ -173,10 +175,11 @@ namespace DigitalSignature {
             this.buttonGenerateDigitalSignature.TabIndex = 9;
             this.buttonGenerateDigitalSignature.TabStop = false;
             this.buttonGenerateDigitalSignature.Click += new System.EventHandler(this.buttonGenerateDigitalSignature_Click);
+            this.buttonGenerateDigitalSignature.MouseHover += new System.EventHandler(this.buttonGenerateDigitalSignature_MouseHover);
             // 
             // buttonGoBack
             // 
-            this.buttonGoBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonGoBack.Image")));
+            this.buttonGoBack.Image = ((System.Drawing.Image) (resources.GetObject("buttonGoBack.Image")));
             this.buttonGoBack.Location = new System.Drawing.Point(16, 367);
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(52, 50);
@@ -184,6 +187,7 @@ namespace DigitalSignature {
             this.buttonGoBack.TabIndex = 10;
             this.buttonGoBack.TabStop = false;
             this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
+            this.buttonGoBack.MouseHover += new System.EventHandler(this.buttonGoBack_MouseHover);
             // 
             // CreateDigitalSignForm
             // 
@@ -202,40 +206,39 @@ namespace DigitalSignature {
             this.Controls.Add(this.textBoxDigitalSignature);
             this.Controls.Add(this.textBoxPublicKey);
             this.Controls.Add(this.textBoxSelectFile);
-            this.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Font = new System.Drawing.Font("Bahnschrift", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CreateDigitalSignForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digital Signature";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonSelectFile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonSaveToFile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGenerateDigitalSignature)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGoBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonSelectFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonSaveToFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGenerateDigitalSignature)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGoBack)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.PictureBox buttonGenerateDigitalSignature;
+        private System.Windows.Forms.PictureBox buttonGoBack;
+        private System.Windows.Forms.PictureBox buttonSaveToFile;
+        private System.Windows.Forms.PictureBox buttonSelectFile;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.TextBox textBoxDigitalSignature;
         private System.Windows.Forms.TextBox textBoxPublicKey;
         private System.Windows.Forms.TextBox textBoxSelectFile;
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox buttonSelectFile;
-        private System.Windows.Forms.PictureBox buttonSaveToFile;
-        private System.Windows.Forms.PictureBox buttonGenerateDigitalSignature;
-        private System.Windows.Forms.PictureBox buttonGoBack;
     }
 }
