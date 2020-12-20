@@ -18,21 +18,24 @@ namespace DigitalSignature.Utils
         }
 
 
-        public static List<string> GetAllHashNames(){
+        public static List<string> GetAllHashNames() {
             var rez = new List<string>();
             GetAllHashType().ForEach(type => rez.Add(type.Name));
             return rez;
         }
         public static List<Type> GetAllHashType() {
-            return typeof(HashAlgorithm).Assembly.GetTypes().Where(type => type.BaseType != null && 
-                                                                           type.BaseType.Name.Equals(nameof(HashAlgorithm)) &&
-                                                                           !type.Name.Equals("KeyedHashAlgorithm") &&
-                                                                           !type.Name.Equals("RIPEMD160")).ToList();
+            return typeof(HashAlgorithm).Assembly.GetTypes().Where(type => 
+                type.BaseType != null && type.BaseType.Name.Equals(nameof(HashAlgorithm)) && 
+                !type.Name.Equals("KeyedHashAlgorithm") &&
+                !type.Name.Equals("RIPEMD160")).ToList();
         }
 
         public static object InvokeAHash(string hashName) {
-            //return Activator.CreateInstance(GetAllHashType().FirstOrDefault(type => type.Name.Equals(hashName)));
-            return GetAllHashType().FirstOrDefault(type => type.Name.Equals(hashName)).GetMethods().First(method => method.Name.Equals("Create") && method.GetParameters().Length < 1).Invoke(null, null);
+            return GetAllHashType()
+                .FirstOrDefault(type => type.Name.Equals(hashName))
+                ?.GetMethods()
+                .First(method => method.Name.Equals("Create") && method.GetParameters().Length < 1)
+                .Invoke(null, null);
         } 
         public static void AddHashToComboBox(ComboBox comboBox) {
             var hashs = HASH.GetAllHashNames();
