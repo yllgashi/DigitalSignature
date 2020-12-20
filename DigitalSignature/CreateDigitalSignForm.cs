@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Windows.Forms;
 using DigitalSignature.Utils;
@@ -7,10 +9,16 @@ using DigitalSignature.Utils;
 namespace DigitalSignature {
     public partial class CreateDigitalSignForm : Form {
         ToolTip toolTip;
+
         public CreateDigitalSignForm() {
             InitializeComponent();
             toolTip = new ToolTip();
+            HASH.AddHashToComboBox(comboBoxHash);
+            comboBoxHash.SelectedIndex = 1;
+            
         }
+
+       
 
 
         private void buttonSelectFile_Click(object sender, EventArgs e) { 
@@ -23,8 +31,8 @@ namespace DigitalSignature {
             if(!String.IsNullOrEmpty(textBoxSelectFile.Text)) {
                 byte[] hashBuffer;
                 byte[] digitalSignature;
-                hashBuffer = HASH.GeneratePDFHASH(textBoxSelectFile.Text);
-                digitalSignature = Sign.SignPDF(hashBuffer);
+                hashBuffer = HASH.GeneratePDFHASH(textBoxSelectFile.Text, comboBoxHash.SelectedItem.ToString());
+                digitalSignature = Sign.SignPDF(hashBuffer, comboBoxHash.SelectedItem.ToString());
                 try {
                     textBoxDigitalSignature.Text = Convert.ToBase64String(digitalSignature);
                     textBoxPublicKey.Text = Sign.PublicKey;
@@ -78,6 +86,17 @@ namespace DigitalSignature {
 
         private void buttonGenerateDigitalSignature_MouseHover(object sender, EventArgs e) {
             toolTip.SetToolTip(buttonGenerateDigitalSignature, "Generate Digital Signature");
+        }
+
+        private void comboBoxHash_SelectedIndexChanged(object sender, EventArgs e) {
+            // var types = HASH.GetAllHashNames();
+            //
+            // if (comboBoxHash.SelectedIndex != 1) {
+            //     object obj = HASH.InvokeAHash(types[comboBoxHash.SelectedIndex]);
+            //
+            //     MessageBox.Show(obj.ToString());
+            // }
+
         }
     }
 }

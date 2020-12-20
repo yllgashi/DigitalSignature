@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Windows.Forms;
+using DigitalSignature.Utils;
 
 namespace DigitalSignature {
     public partial class MainForm : Form {
         private ToolTip toolTip; 
         public MainForm() {
+           
             InitializeComponent();
             toolTip = new ToolTip();
         }

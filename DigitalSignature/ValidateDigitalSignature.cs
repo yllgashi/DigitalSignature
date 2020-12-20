@@ -9,6 +9,8 @@ namespace DigitalSignature {
         public ValidateDigitalSignature() {
             toolTip = new ToolTip();
             InitializeComponent();
+            HASH.AddHashToComboBox(comboBoxHash);
+            comboBoxHash.SelectedIndex = 0;
         }
 
 
@@ -37,10 +39,13 @@ namespace DigitalSignature {
             if (!String.IsNullOrEmpty(textBoxFile.Text)) {
                 if (!String.IsNullOrEmpty(textBoxDigitalSignature.Text) &&
                     !String.IsNullOrEmpty(textBoxPublicKey.Text)) {
-                    var hashBuff = HASH.GeneratePDFHASH(textBoxFile.Text);
+                    var hashBuff = HASH.GeneratePDFHASH(textBoxFile.Text,comboBoxHash.SelectedItem.ToString());
                     try {
-                        if (Sign.VaidateDigitalSign(hashBuff,
-                            Convert.FromBase64String(textBoxDigitalSignature.Text), textBoxPublicKey.Text))
+                        if (Sign.VaidateDigitalSign(
+                            hashBuff, 
+                                     comboBoxHash.SelectedItem.ToString(),
+                                     Convert.FromBase64String(textBoxDigitalSignature.Text),
+                                     textBoxPublicKey.Text))
                             MessageBox.Show("Success");
                         else {
                             MessageBox.Show("Digital signs dont match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
