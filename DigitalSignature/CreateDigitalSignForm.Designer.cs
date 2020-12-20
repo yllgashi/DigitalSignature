@@ -43,6 +43,8 @@ namespace DigitalSignature {
             this.buttonSaveToFile = new System.Windows.Forms.PictureBox();
             this.buttonGenerateDigitalSignature = new System.Windows.Forms.PictureBox();
             this.buttonGoBack = new System.Windows.Forms.PictureBox();
+            this.comboBoxHash = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).BeginInit();
@@ -156,7 +158,7 @@ namespace DigitalSignature {
             // buttonSaveToFile
             // 
             this.buttonSaveToFile.Image = ((System.Drawing.Image) (resources.GetObject("buttonSaveToFile.Image")));
-            this.buttonSaveToFile.Location = new System.Drawing.Point(144, 367);
+            this.buttonSaveToFile.Location = new System.Drawing.Point(144, 416);
             this.buttonSaveToFile.Name = "buttonSaveToFile";
             this.buttonSaveToFile.Size = new System.Drawing.Size(49, 50);
             this.buttonSaveToFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -168,7 +170,7 @@ namespace DigitalSignature {
             // buttonGenerateDigitalSignature
             // 
             this.buttonGenerateDigitalSignature.Image = ((System.Drawing.Image) (resources.GetObject("buttonGenerateDigitalSignature.Image")));
-            this.buttonGenerateDigitalSignature.Location = new System.Drawing.Point(270, 367);
+            this.buttonGenerateDigitalSignature.Location = new System.Drawing.Point(270, 416);
             this.buttonGenerateDigitalSignature.Name = "buttonGenerateDigitalSignature";
             this.buttonGenerateDigitalSignature.Size = new System.Drawing.Size(50, 50);
             this.buttonGenerateDigitalSignature.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -180,7 +182,7 @@ namespace DigitalSignature {
             // buttonGoBack
             // 
             this.buttonGoBack.Image = ((System.Drawing.Image) (resources.GetObject("buttonGoBack.Image")));
-            this.buttonGoBack.Location = new System.Drawing.Point(16, 367);
+            this.buttonGoBack.Location = new System.Drawing.Point(16, 416);
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(52, 50);
             this.buttonGoBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -189,17 +191,37 @@ namespace DigitalSignature {
             this.buttonGoBack.Click += new System.EventHandler(this.buttonGoBack_Click);
             this.buttonGoBack.MouseHover += new System.EventHandler(this.buttonGoBack_MouseHover);
             // 
+            // comboBoxHash
+            // 
+            this.comboBoxHash.FormattingEnabled = true;
+            this.comboBoxHash.Location = new System.Drawing.Point(16, 358);
+            this.comboBoxHash.Name = "comboBoxHash";
+            this.comboBoxHash.Size = new System.Drawing.Size(304, 26);
+            this.comboBoxHash.TabIndex = 11;
+            this.comboBoxHash.SelectedIndexChanged += new System.EventHandler(this.comboBoxHash_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(16, 338);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 17);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Hash Function";
+            // 
             // CreateDigitalSignForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(384, 452);
+            this.ClientSize = new System.Drawing.Size(384, 512);
+            this.Controls.Add(this.comboBoxHash);
             this.Controls.Add(this.buttonGoBack);
             this.Controls.Add(this.buttonGenerateDigitalSignature);
             this.Controls.Add(this.buttonSaveToFile);
             this.Controls.Add(this.buttonSelectFile);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -227,9 +249,11 @@ namespace DigitalSignature {
         private System.Windows.Forms.PictureBox buttonGoBack;
         private System.Windows.Forms.PictureBox buttonSaveToFile;
         private System.Windows.Forms.PictureBox buttonSelectFile;
+        private System.Windows.Forms.ComboBox comboBoxHash;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;

@@ -41,13 +41,15 @@ namespace DigitalSignature {
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.buttonGoBack = new System.Windows.Forms.PictureBox();
             this.buttonOpenFile = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGetKeysFromFile)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonValidate)).BeginInit();
+            this.label4 = new System.Windows.Forms.Label();
+            this.comboBoxHash = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGetKeysFromFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonValidate)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGoBack)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonOpenFile)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGoBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonOpenFile)).BeginInit();
             this.SuspendLayout();
             // 
             // openFileDialog1
@@ -107,8 +109,8 @@ namespace DigitalSignature {
             // 
             // buttonGetKeysFromFile
             // 
-            this.buttonGetKeysFromFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonGetKeysFromFile.Image")));
-            this.buttonGetKeysFromFile.Location = new System.Drawing.Point(137, 387);
+            this.buttonGetKeysFromFile.Image = ((System.Drawing.Image) (resources.GetObject("buttonGetKeysFromFile.Image")));
+            this.buttonGetKeysFromFile.Location = new System.Drawing.Point(124, 450);
             this.buttonGetKeysFromFile.Name = "buttonGetKeysFromFile";
             this.buttonGetKeysFromFile.Size = new System.Drawing.Size(52, 50);
             this.buttonGetKeysFromFile.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -119,8 +121,8 @@ namespace DigitalSignature {
             // 
             // buttonValidate
             // 
-            this.buttonValidate.Image = ((System.Drawing.Image)(resources.GetObject("buttonValidate.Image")));
-            this.buttonValidate.Location = new System.Drawing.Point(258, 387);
+            this.buttonValidate.Image = ((System.Drawing.Image) (resources.GetObject("buttonValidate.Image")));
+            this.buttonValidate.Location = new System.Drawing.Point(256, 450);
             this.buttonValidate.Name = "buttonValidate";
             this.buttonValidate.Size = new System.Drawing.Size(59, 50);
             this.buttonValidate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -142,7 +144,7 @@ namespace DigitalSignature {
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(12, 22);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(269, 87);
@@ -152,7 +154,7 @@ namespace DigitalSignature {
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox4.Image")));
             this.pictureBox4.Location = new System.Drawing.Point(256, 23);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
@@ -163,8 +165,8 @@ namespace DigitalSignature {
             // 
             // buttonGoBack
             // 
-            this.buttonGoBack.Image = ((System.Drawing.Image)(resources.GetObject("buttonGoBack.Image")));
-            this.buttonGoBack.Location = new System.Drawing.Point(16, 387);
+            this.buttonGoBack.Image = ((System.Drawing.Image) (resources.GetObject("buttonGoBack.Image")));
+            this.buttonGoBack.Location = new System.Drawing.Point(13, 450);
             this.buttonGoBack.Name = "buttonGoBack";
             this.buttonGoBack.Size = new System.Drawing.Size(48, 50);
             this.buttonGoBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -175,7 +177,7 @@ namespace DigitalSignature {
             // 
             // buttonOpenFile
             // 
-            this.buttonOpenFile.Image = ((System.Drawing.Image)(resources.GetObject("buttonOpenFile.Image")));
+            this.buttonOpenFile.Image = ((System.Drawing.Image) (resources.GetObject("buttonOpenFile.Image")));
             this.buttonOpenFile.Location = new System.Drawing.Point(324, 184);
             this.buttonOpenFile.Name = "buttonOpenFile";
             this.buttonOpenFile.Size = new System.Drawing.Size(35, 26);
@@ -185,17 +187,36 @@ namespace DigitalSignature {
             this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
             this.buttonOpenFile.MouseHover += new System.EventHandler(this.buttonOpenFile_MouseHover);
             // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(13, 358);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 19);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Select Hash";
+            // 
+            // comboBoxHash
+            // 
+            this.comboBoxHash.FormattingEnabled = true;
+            this.comboBoxHash.Location = new System.Drawing.Point(13, 380);
+            this.comboBoxHash.Name = "comboBoxHash";
+            this.comboBoxHash.Size = new System.Drawing.Size(304, 26);
+            this.comboBoxHash.TabIndex = 11;
+            // 
             // ValidateDigitalSignature
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(384, 452);
+            this.ClientSize = new System.Drawing.Size(384, 535);
+            this.Controls.Add(this.comboBoxHash);
             this.Controls.Add(this.buttonOpenFile);
             this.Controls.Add(this.buttonGoBack);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonValidate);
             this.Controls.Add(this.buttonGetKeysFromFile);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -207,33 +228,34 @@ namespace DigitalSignature {
             this.Name = "ValidateDigitalSignature";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Digital Signature";
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGetKeysFromFile)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonValidate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGetKeysFromFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonValidate)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonGoBack)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonOpenFile)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonGoBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize) (this.buttonOpenFile)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
+
+        private System.Windows.Forms.PictureBox buttonGetKeysFromFile;
+        private System.Windows.Forms.PictureBox buttonGoBack;
+        private System.Windows.Forms.PictureBox buttonOpenFile;
+        private System.Windows.Forms.PictureBox buttonValidate;
+        private System.Windows.Forms.ComboBox comboBoxHash;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.TextBox textBoxDigitalSignature;
         private System.Windows.Forms.TextBox textBoxFile;
         private System.Windows.Forms.TextBox textBoxPublicKey;
 
         #endregion
-
-        private System.Windows.Forms.PictureBox buttonGetKeysFromFile;
-        private System.Windows.Forms.PictureBox buttonValidate;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox buttonGoBack;
-        private System.Windows.Forms.PictureBox buttonOpenFile;
     }
 }
