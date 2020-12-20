@@ -24,7 +24,10 @@ namespace DigitalSignature.Utils
             return rez;
         }
         public static List<Type> GetAllHashType() {
-            return typeof(HashAlgorithm).Assembly.GetTypes().Where(type => type.BaseType != null && type.BaseType.Name.Equals(nameof(HashAlgorithm))).ToList();
+            return typeof(HashAlgorithm).Assembly.GetTypes().Where(type => type.BaseType != null && 
+                                                                           type.BaseType.Name.Equals(nameof(HashAlgorithm)) &&
+                                                                           !type.Name.Equals("KeyedHashAlgorithm") &&
+                                                                           !type.Name.Equals("RIPEMD160")).ToList();
         }
 
         public static object InvokeAHash(string hashName) {
