@@ -6,7 +6,6 @@ using DigitalSignature.Utils;
 namespace DigitalSignature {
     public partial class ValidateDigitalSignature : Form {
         ToolTip toolTip;
-        private string hash;
         public ValidateDigitalSignature() {
             toolTip = new ToolTip();
             InitializeComponent();
@@ -44,7 +43,7 @@ namespace DigitalSignature {
                     try {
                         if (Sign.VaidateDigitalSign(
                             hashBuff, 
-                                     hash,
+                                     comboBoxHash.SelectedItem.ToString(),
                                      Convert.FromBase64String(textBoxDigitalSignature.Text),
                                      textBoxPublicKey.Text))
                             MessageBox.Show("Success");
