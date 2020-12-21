@@ -4,9 +4,11 @@ using System.Windows.Forms;
 using DigitalSignature.Utils;
 
 namespace DigitalSignature {
-    public partial class ValidateDigitalSignature : Form {
+    public partial class ValidateDigitalSignature : Form
+    {
         ToolTip toolTip;
-        public ValidateDigitalSignature() {
+        public ValidateDigitalSignature()
+        {
             toolTip = new ToolTip();
             InitializeComponent();
             HASH.AddHashToComboBox(comboBoxHash);
@@ -14,75 +16,87 @@ namespace DigitalSignature {
         }
 
 
-        private void buttonOpenFile_Click(object sender, EventArgs e) {
+        private void buttonOpenFile_Click(object sender, EventArgs e)
+        {
             string file = FileService.OpenFile(openFileDialog1, "*");
-            if (file != null)
-                textBoxFile.Text = file;
+            if (file != null) textBoxFile.Text = file;
         }
 
-        private void buttonGetKeysFromFile_Click(object sender, EventArgs e) {
+        private void buttonGetKeysFromFile_Click(object sender, EventArgs e)
+        {
             string file = FileService.OpenFile(openFileDialog1, "txt");
 
-            if (!String.IsNullOrEmpty(file)) {
+            if (!String.IsNullOrEmpty(file))
+            {
                 string[] data = FileService.GetPKeyAndSignatureFromFile(file, 20);
-                if (data != null) {
+                if (data != null)
+                {
                     textBoxDigitalSignature.Text = data[0];
                     textBoxPublicKey.Text = data[1];
-                } else {
+                }
+                else
+                {
                     MessageBox.Show("File is not in the right format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
         }
 
-        private void buttonValidate_Click(object sender, EventArgs e) {
-            if (!String.IsNullOrEmpty(textBoxFile.Text)) {
+        private void buttonValidate_Click(object sender, EventArgs e)
+        {
+            if (!String.IsNullOrEmpty(textBoxFile.Text))
+            {
                 if (!String.IsNullOrEmpty(textBoxDigitalSignature.Text) &&
-                    !String.IsNullOrEmpty(textBoxPublicKey.Text)) {
-                    var hashBuff = HASH.GeneratePDFHASH(textBoxFile.Text,comboBoxHash.SelectedItem.ToString());
-                    try {
-                        if (Sign.VaidateDigitalSign(
-                            hashBuff, 
-                                     comboBoxHash.SelectedItem.ToString(),
-                                     Convert.FromBase64String(textBoxDigitalSignature.Text),
-                                     textBoxPublicKey.Text))
-                            MessageBox.Show("Success");
-                        else {
-                            MessageBox.Show("Digital signs dont match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    } catch (Exception) {
+                    !String.IsNullOrEmpty(textBoxPublicKey.Text))
+                {
+                    var hashBuff = HASH.GenerateFileHASH(textBoxFile.Text,comboBoxHash.SelectedItem.ToString());
+                    try
+                    {
+                        if (Sign.VaidateDigitalSign(hashBuff,
+                            comboBoxHash.SelectedItem.ToString(),
+                            Convert.FromBase64String(textBoxDigitalSignature.Text),
+                            textBoxPublicKey.Text))
+                                MessageBox.Show("File is valid, digital signature has been matched", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        else    MessageBox.Show("Digital signs dont match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception)
+                    {
                         MessageBox.Show("Digital Key is not in the right format", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                } else {
-                    MessageBox.Show("Please fill the digital signature and the public key first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            } else
-                MessageBox.Show("Please select a file first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else    MessageBox.Show("Please fill the digital signature and the public key first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else    MessageBox.Show("Please select a file first", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
         }
 
-        private void buttonGoBack_Click(object sender, EventArgs e) {
+        private void buttonGoBack_Click(object sender, EventArgs e)
+        {
             this.Hide();
             MainForm form1 = new MainForm();
             form1.ShowDialog();
             this.Close();
         }
 
-        private void buttonOpenFile_MouseHover(object sender, EventArgs e) {
+        private void buttonOpenFile_MouseHover(object sender, EventArgs e)
+        {
             toolTip.SetToolTip(buttonOpenFile, "Open File");
         }
 
-        private void buttonGoBack_MouseHover(object sender, EventArgs e) {
+        private void buttonGoBack_MouseHover(object sender, EventArgs e)
+        {
 
             toolTip.SetToolTip(buttonGoBack, "Go Back");
         }
 
-        private void buttonGetKeysFromFile_MouseHover(object sender, EventArgs e) {
+        private void buttonGetKeysFromFile_MouseHover(object sender, EventArgs e)
+        {
 
             toolTip.SetToolTip(buttonGetKeysFromFile, "Get Keys Form File");
         }
 
-        private void buttonValidate_MouseHover(object sender, EventArgs e) {
+        private void buttonValidate_MouseHover(object sender, EventArgs e)
+        {
             toolTip.SetToolTip(buttonValidate, "Validate");
         }
     }

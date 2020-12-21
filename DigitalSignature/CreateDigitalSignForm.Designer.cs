@@ -198,7 +198,6 @@ namespace DigitalSignature {
             this.comboBoxHash.Name = "comboBoxHash";
             this.comboBoxHash.Size = new System.Drawing.Size(304, 26);
             this.comboBoxHash.TabIndex = 11;
-            this.comboBoxHash.SelectedIndexChanged += new System.EventHandler(this.comboBoxHash_SelectedIndexChanged);
             // 
             // label4
             // 
